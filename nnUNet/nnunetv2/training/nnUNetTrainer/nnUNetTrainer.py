@@ -474,7 +474,7 @@ class nnUNetTrainer(object):
                     sleep(0.5)
                     ctr += 1
             if also_print_to_console:
-                print(*args)
+                print(*args, flush=True)
         elif also_print_to_console:
             print(*args)
 
