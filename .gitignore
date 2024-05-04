@@ -2,6 +2,9 @@
 nnUNet/.git
 nnUNet/.gitignore
 
+# Annotations
+annotations/ULS23
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
