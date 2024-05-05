@@ -28,7 +28,7 @@ RUN python3.9 -m pip install --no-cache-dir -r /tmp/requirements.txt -f https://
 RUN git config --global advice.detachedHead false && \
     git clone --no-checkout https://github.com/MIC-DKFZ/nnUNet.git /opt/algorithm/nnunet/ && \
     cd /opt/algorithm/nnunet/ && \
-    git checkout 947eafbb9adb5eb06b9171330b4688e006e6f301
+    git checkout 2d2e8ce2c0261dc88b53866dcc4c71e6972432ed
 
 # Install a few dependencies that are not automatically installed
 RUN pip3 install \
@@ -62,8 +62,8 @@ COPY --chown=user:user ./architecture/extensions/nnunetv2/ /opt/algorithm/nnunet
 # Copy model checkpoint to docker
 COPY --chown=user:user ./architecture/nnUNet_results/ /opt/algorithm/nnunet/nnUNet_results/
 
-# Copy container testing data to docker
-#COPY --chown=user:user /architecture/input/ /input/
+# # Copy container testing data to docker
+# COPY --chown=user:user ./architecture/input/ /input/
 
 # Set environment variable defaults
 ENV nnUNet_raw="/opt/algorithm/nnunet/nnUNet_raw" \

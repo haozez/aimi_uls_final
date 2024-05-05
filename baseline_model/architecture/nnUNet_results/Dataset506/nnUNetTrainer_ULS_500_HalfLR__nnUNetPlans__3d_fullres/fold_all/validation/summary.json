@@ -1,0 +1,1146 @@
+{
+    "foreground_mean": {
+        "Dice": 0.8287914034138545,
+        "FN": 1803.5428571428572,
+        "FP": 3156.1714285714284,
+        "IoU": 0.7613305773578478,
+        "TN": 8360237.0,
+        "TP": 23411.285714285714,
+        "n_pred": 26567.457142857143,
+        "n_ref": 25214.82857142857
+    },
+    "mean": {
+        "1": {
+            "Dice": 0.8287914034138545,
+            "FN": 1803.5428571428572,
+            "FP": 3156.1714285714284,
+            "IoU": 0.7613305773578478,
+            "TN": 8360237.0,
+            "TP": 23411.285714285714,
+            "n_pred": 26567.457142857143,
+            "n_ref": 25214.82857142857
+        }
+    },
+    "metric_per_case": [
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9353344450620715,
+                    "FN": 184,
+                    "FP": 165,
+                    "IoU": 0.8785241907413853,
+                    "TN": 8385735,
+                    "TP": 2524,
+                    "n_pred": 2689,
+                    "n_ref": 2708
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_001_lesion_03_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_001_lesion_03_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9648393194706995,
+                    "FN": 48,
+                    "FP": 45,
+                    "IoU": 0.9320672023374726,
+                    "TN": 8387239,
+                    "TP": 1276,
+                    "n_pred": 1321,
+                    "n_ref": 1324
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_003_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_003_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9128576126274252,
+                    "FN": 159,
+                    "FP": 106,
+                    "IoU": 0.8396854204476709,
+                    "TN": 8386955,
+                    "TP": 1388,
+                    "n_pred": 1494,
+                    "n_ref": 1547
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_004_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_004_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9569780887716073,
+                    "FN": 487,
+                    "FP": 964,
+                    "IoU": 0.9175052589686736,
+                    "TN": 8371019,
+                    "TP": 16138,
+                    "n_pred": 17102,
+                    "n_ref": 16625
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_005_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_005_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9326210826210827,
+                    "FN": 501,
+                    "FP": 445,
+                    "IoU": 0.8737488322434273,
+                    "TN": 8381115,
+                    "TP": 6547,
+                    "n_pred": 6992,
+                    "n_ref": 7048
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_006_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_006_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9566569576247299,
+                    "FN": 4544,
+                    "FP": 4682,
+                    "IoU": 0.9169150689372585,
+                    "TN": 8277565,
+                    "TP": 101817,
+                    "n_pred": 106499,
+                    "n_ref": 106361
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_009_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_009_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9342803100545192,
+                    "FN": 2091,
+                    "FP": 1453,
+                    "IoU": 0.8766660866539064,
+                    "TN": 8359873,
+                    "TP": 25191,
+                    "n_pred": 26644,
+                    "n_ref": 27282
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_010_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_010_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 29,
+                    "FP": 26163,
+                    "IoU": 0.0,
+                    "TN": 8362416,
+                    "TP": 0,
+                    "n_pred": 26163,
+                    "n_ref": 29
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_010_lesion_02_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_010_lesion_02_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9776308369362098,
+                    "FN": 2021,
+                    "FP": 2025,
+                    "IoU": 0.9562405364481938,
+                    "TN": 8296148,
+                    "TP": 88414,
+                    "n_pred": 90439,
+                    "n_ref": 90435
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_014_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_014_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9539748953974896,
+                    "FN": 72,
+                    "FP": 49,
+                    "IoU": 0.912,
+                    "TN": 8387233,
+                    "TP": 1254,
+                    "n_pred": 1303,
+                    "n_ref": 1326
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_015_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_015_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9136764705882353,
+                    "FN": 601,
+                    "FP": 573,
+                    "IoU": 0.8410721537836741,
+                    "TN": 8381221,
+                    "TP": 6213,
+                    "n_pred": 6786,
+                    "n_ref": 6814
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_016_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_016_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9205545774647887,
+                    "FN": 873,
+                    "FP": 571,
+                    "IoU": 0.852803261977574,
+                    "TN": 8378798,
+                    "TP": 8366,
+                    "n_pred": 8937,
+                    "n_ref": 9239
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_018_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_018_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9009957095442402,
+                    "FN": 518,
+                    "FP": 705,
+                    "IoU": 0.8198291101944608,
+                    "TN": 8381820,
+                    "TP": 5565,
+                    "n_pred": 6270,
+                    "n_ref": 6083
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_020_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_020_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8899950849418139,
+                    "FN": 13025,
+                    "FP": 16742,
+                    "IoU": 0.8017938234941604,
+                    "TN": 8238426,
+                    "TP": 120415,
+                    "n_pred": 137157,
+                    "n_ref": 133440
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_022_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_022_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9274100627320445,
+                    "FN": 798,
+                    "FP": 903,
+                    "IoU": 0.8646455001193603,
+                    "TN": 8376041,
+                    "TP": 10866,
+                    "n_pred": 11769,
+                    "n_ref": 11664
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_023_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_023_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.928898332788493,
+                    "FN": 438,
+                    "FP": 432,
+                    "IoU": 0.8672363802838394,
+                    "TN": 8382055,
+                    "TP": 5683,
+                    "n_pred": 6115,
+                    "n_ref": 6121
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_025_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_025_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.94901585565883,
+                    "FN": 1470,
+                    "FP": 1514,
+                    "IoU": 0.9029782806606841,
+                    "TN": 8357852,
+                    "TP": 27772,
+                    "n_pred": 29286,
+                    "n_ref": 29242
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_026_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_026_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9552338530066815,
+                    "FN": 1807,
+                    "FP": 1007,
+                    "IoU": 0.9143039863568535,
+                    "TN": 8355771,
+                    "TP": 30023,
+                    "n_pred": 31030,
+                    "n_ref": 31830
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_027_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_027_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9209116530006106,
+                    "FN": 13248,
+                    "FP": 9679,
+                    "IoU": 0.8534163635084937,
+                    "TN": 8232199,
+                    "TP": 133482,
+                    "n_pred": 143161,
+                    "n_ref": 146730
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_028_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_028_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8822916666666667,
+                    "FN": 536,
+                    "FP": 368,
+                    "IoU": 0.7893755824790307,
+                    "TN": 8384316,
+                    "TP": 3388,
+                    "n_pred": 3756,
+                    "n_ref": 3924
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_029_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_029_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9072536548236674,
+                    "FN": 11205,
+                    "FP": 9997,
+                    "IoU": 0.8302509167187074,
+                    "TN": 8263706,
+                    "TP": 103700,
+                    "n_pred": 113697,
+                    "n_ref": 114905
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_031_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_031_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8976884320328126,
+                    "FN": 3647,
+                    "FP": 4435,
+                    "IoU": 0.8143690569157976,
+                    "TN": 8345070,
+                    "TP": 35456,
+                    "n_pred": 39891,
+                    "n_ref": 39103
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_033_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_033_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9147627100349008,
+                    "FN": 1403,
+                    "FP": 966,
+                    "IoU": 0.8429149260659108,
+                    "TN": 8373527,
+                    "TP": 12712,
+                    "n_pred": 13678,
+                    "n_ref": 14115
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_034_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_034_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8456885637923759,
+                    "FN": 1605,
+                    "FP": 1686,
+                    "IoU": 0.7326346575676335,
+                    "TN": 8376299,
+                    "TP": 9018,
+                    "n_pred": 10704,
+                    "n_ref": 10623
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_036_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_036_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.010808760785057362,
+                    "FN": 6,
+                    "FP": 10427,
+                    "IoU": 0.005433746425166826,
+                    "TN": 8378118,
+                    "TP": 57,
+                    "n_pred": 10484,
+                    "n_ref": 63
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_036_lesion_04_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_036_lesion_04_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9467296021577882,
+                    "FN": 54,
+                    "FP": 25,
+                    "IoU": 0.8988476312419974,
+                    "TN": 8387827,
+                    "TP": 702,
+                    "n_pred": 727,
+                    "n_ref": 756
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_037_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_037_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9179693315468215,
+                    "FN": 335,
+                    "FP": 216,
+                    "IoU": 0.8483764446890478,
+                    "TN": 8384974,
+                    "TP": 3083,
+                    "n_pred": 3299,
+                    "n_ref": 3418
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_038_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_038_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9217390141843024,
+                    "FN": 6687,
+                    "FP": 5021,
+                    "IoU": 0.8548385097018164,
+                    "TN": 8307953,
+                    "TP": 68947,
+                    "n_pred": 73968,
+                    "n_ref": 75634
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_041_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_041_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6840552995391705,
+                    "FN": 778,
+                    "FP": 2650,
+                    "IoU": 0.5198207031797171,
+                    "TN": 8381469,
+                    "TP": 3711,
+                    "n_pred": 6361,
+                    "n_ref": 4489
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_042_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_042_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8599626567084556,
+                    "FN": 300,
+                    "FP": 225,
+                    "IoU": 0.7543284978942443,
+                    "TN": 8386471,
+                    "TP": 1612,
+                    "n_pred": 1837,
+                    "n_ref": 1912
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_043_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_043_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8752057951926243,
+                    "FN": 1739,
+                    "FP": 1672,
+                    "IoU": 0.7781030444964872,
+                    "TN": 8373236,
+                    "TP": 11961,
+                    "n_pred": 13633,
+                    "n_ref": 13700
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_044_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_044_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9127380693750453,
+                    "FN": 616,
+                    "FP": 589,
+                    "IoU": 0.8394831490608765,
+                    "TN": 8381101,
+                    "TP": 6302,
+                    "n_pred": 6891,
+                    "n_ref": 6918
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_045_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_045_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9261523459475678,
+                    "FN": 934,
+                    "FP": 1035,
+                    "IoU": 0.8624615814473316,
+                    "TN": 8374292,
+                    "TP": 12347,
+                    "n_pred": 13382,
+                    "n_ref": 13281
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_046_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_046_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9362544869414532,
+                    "FN": 603,
+                    "FP": 427,
+                    "IoU": 0.8801489411217128,
+                    "TN": 8380014,
+                    "TP": 7564,
+                    "n_pred": 7991,
+                    "n_ref": 8167
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_047_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_047_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9172648281072913,
+                    "FN": 362,
+                    "FP": 295,
+                    "IoU": 0.8471737613398465,
+                    "TN": 8384309,
+                    "TP": 3642,
+                    "n_pred": 3937,
+                    "n_ref": 4004
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_048_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_048_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.906541463105133,
+                    "FN": 708,
+                    "FP": 765,
+                    "IoU": 0.829058837182314,
+                    "TN": 8379991,
+                    "TP": 7144,
+                    "n_pred": 7909,
+                    "n_ref": 7852
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_049_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_049_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9501103752759382,
+                    "FN": 446,
+                    "FP": 345,
+                    "IoU": 0.9049621530698065,
+                    "TN": 8380285,
+                    "TP": 7532,
+                    "n_pred": 7877,
+                    "n_ref": 7978
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_051_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_051_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9588007209429175,
+                    "FN": 15034,
+                    "FP": 12762,
+                    "IoU": 0.9208618755587443,
+                    "TN": 8037374,
+                    "TP": 323438,
+                    "n_pred": 336200,
+                    "n_ref": 338472
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_053_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_053_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8927883821992408,
+                    "FN": 1086,
+                    "FP": 863,
+                    "IoU": 0.8063394276629571,
+                    "TN": 8378544,
+                    "TP": 8115,
+                    "n_pred": 8978,
+                    "n_ref": 9201
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_054_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_054_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8864828335953224,
+                    "FN": 3946,
+                    "FP": 3781,
+                    "IoU": 0.7961106126972399,
+                    "TN": 8350710,
+                    "TP": 30171,
+                    "n_pred": 33952,
+                    "n_ref": 34117
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_055_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_055_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9410809933452362,
+                    "FN": 229,
+                    "FP": 134,
+                    "IoU": 0.8887185775597792,
+                    "TN": 8385346,
+                    "TP": 2899,
+                    "n_pred": 3033,
+                    "n_ref": 3128
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_057_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_057_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9122603137710633,
+                    "FN": 88,
+                    "FP": 63,
+                    "IoU": 0.8386752136752137,
+                    "TN": 8387672,
+                    "TP": 785,
+                    "n_pred": 848,
+                    "n_ref": 873
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_058_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_058_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8766531713900135,
+                    "FN": 241,
+                    "FP": 216,
+                    "IoU": 0.7803940413262854,
+                    "TN": 8386527,
+                    "TP": 1624,
+                    "n_pred": 1840,
+                    "n_ref": 1865
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_059_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_059_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9114774114774115,
+                    "FN": 170,
+                    "FP": 120,
+                    "IoU": 0.8373527762198542,
+                    "TN": 8386825,
+                    "TP": 1493,
+                    "n_pred": 1613,
+                    "n_ref": 1663
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_061_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_061_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9255786941010536,
+                    "FN": 387,
+                    "FP": 510,
+                    "IoU": 0.8614671814671815,
+                    "TN": 8382133,
+                    "TP": 5578,
+                    "n_pred": 6088,
+                    "n_ref": 5965
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_062_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_062_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9671706861120766,
+                    "FN": 4257,
+                    "FP": 5472,
+                    "IoU": 0.9364283847360168,
+                    "TN": 8235568,
+                    "TP": 143311,
+                    "n_pred": 148783,
+                    "n_ref": 147568
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_064_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_064_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9475482936514394,
+                    "FN": 2285,
+                    "FP": 938,
+                    "IoU": 0.9003247255296118,
+                    "TN": 8356273,
+                    "TP": 29112,
+                    "n_pred": 30050,
+                    "n_ref": 31397
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_065_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_065_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9280678769729864,
+                    "FN": 606,
+                    "FP": 547,
+                    "IoU": 0.865789780002328,
+                    "TN": 8380017,
+                    "TP": 7438,
+                    "n_pred": 7985,
+                    "n_ref": 8044
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_066_lesion_02_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_066_lesion_02_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8729547641963427,
+                    "FN": 172,
+                    "FP": 92,
+                    "IoU": 0.7745516652433817,
+                    "TN": 8387437,
+                    "TP": 907,
+                    "n_pred": 999,
+                    "n_ref": 1079
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_069_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_069_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9185475956820413,
+                    "FN": 272,
+                    "FP": 226,
+                    "IoU": 0.8493647912885662,
+                    "TN": 8385302,
+                    "TP": 2808,
+                    "n_pred": 3034,
+                    "n_ref": 3080
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_070_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_070_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9190082644628099,
+                    "FN": 229,
+                    "FP": 212,
+                    "IoU": 0.8501529051987767,
+                    "TN": 8385665,
+                    "TP": 2502,
+                    "n_pred": 2714,
+                    "n_ref": 2731
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_071_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_071_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9051478094206371,
+                    "FN": 2601,
+                    "FP": 1952,
+                    "IoU": 0.826730600905735,
+                    "TN": 8362331,
+                    "TP": 21724,
+                    "n_pred": 23676,
+                    "n_ref": 24325
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_073_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_073_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9106057258518576,
+                    "FN": 7167,
+                    "FP": 5376,
+                    "IoU": 0.8358826069321051,
+                    "TN": 8312181,
+                    "TP": 63884,
+                    "n_pred": 69260,
+                    "n_ref": 71051
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_074_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_074_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 9,
+                    "FP": 50427,
+                    "IoU": 0.0,
+                    "TN": 8338172,
+                    "TP": 0,
+                    "n_pred": 50427,
+                    "n_ref": 9
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_074_lesion_09_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_074_lesion_09_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9277951635846373,
+                    "FN": 1443,
+                    "FP": 1095,
+                    "IoU": 0.8653152196985778,
+                    "TN": 8369764,
+                    "TP": 16306,
+                    "n_pred": 17401,
+                    "n_ref": 17749
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_075_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_075_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 68,
+                    "FP": 17119,
+                    "IoU": 0.0,
+                    "TN": 8371421,
+                    "TP": 0,
+                    "n_pred": 17119,
+                    "n_ref": 68
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_075_lesion_02_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_075_lesion_02_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9236421725239616,
+                    "FN": 493,
+                    "FP": 463,
+                    "IoU": 0.8581181359453844,
+                    "TN": 8381870,
+                    "TP": 5782,
+                    "n_pred": 6245,
+                    "n_ref": 6275
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_078_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_078_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.889753128170443,
+                    "FN": 342,
+                    "FP": 310,
+                    "IoU": 0.8014011574779165,
+                    "TN": 8385325,
+                    "TP": 2631,
+                    "n_pred": 2941,
+                    "n_ref": 2973
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_079_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_079_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9067373356436653,
+                    "FN": 434,
+                    "FP": 481,
+                    "IoU": 0.8293865373857915,
+                    "TN": 8383245,
+                    "TP": 4448,
+                    "n_pred": 4929,
+                    "n_ref": 4882
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_080_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_080_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8860257680872151,
+                    "FN": 398,
+                    "FP": 292,
+                    "IoU": 0.7953736654804271,
+                    "TN": 8385236,
+                    "TP": 2682,
+                    "n_pred": 2974,
+                    "n_ref": 3080
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_081_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_081_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9194444444444444,
+                    "FN": 180,
+                    "FP": 110,
+                    "IoU": 0.8508997429305912,
+                    "TN": 8386663,
+                    "TP": 1655,
+                    "n_pred": 1765,
+                    "n_ref": 1835
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_083_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_083_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.13675213675213677,
+                    "FN": 16,
+                    "FP": 287,
+                    "IoU": 0.07339449541284404,
+                    "TN": 8388281,
+                    "TP": 24,
+                    "n_pred": 311,
+                    "n_ref": 40
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_084_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_084_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.6791510611735331,
+                    "FN": 139,
+                    "FP": 118,
+                    "IoU": 0.5141776937618148,
+                    "TN": 8388079,
+                    "TP": 272,
+                    "n_pred": 390,
+                    "n_ref": 411
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_084_lesion_02_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_084_lesion_02_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.4857142857142857,
+                    "FN": 33,
+                    "FP": 183,
+                    "IoU": 0.32075471698113206,
+                    "TN": 8388290,
+                    "TP": 102,
+                    "n_pred": 285,
+                    "n_ref": 135
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_084_lesion_03_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_084_lesion_03_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8888041967448326,
+                    "FN": 2618,
+                    "FP": 2342,
+                    "IoU": 0.7998628091837147,
+                    "TN": 8363825,
+                    "TP": 19823,
+                    "n_pred": 22165,
+                    "n_ref": 22441
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_084_lesion_05_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_084_lesion_05_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9078832242720002,
+                    "FN": 4307,
+                    "FP": 3168,
+                    "IoU": 0.8313059962537519,
+                    "TN": 8344297,
+                    "TP": 36836,
+                    "n_pred": 40004,
+                    "n_ref": 41143
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_086_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_086_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9330740560687085,
+                    "FN": 249,
+                    "FP": 164,
+                    "IoU": 0.8745443499392467,
+                    "TN": 8385316,
+                    "TP": 2879,
+                    "n_pred": 3043,
+                    "n_ref": 3128
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_092_lesion_02_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_092_lesion_02_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.8975893315096598,
+                    "FN": 328,
+                    "FP": 271,
+                    "IoU": 0.8142059553349876,
+                    "TN": 8385384,
+                    "TP": 2625,
+                    "n_pred": 2896,
+                    "n_ref": 2953
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_093_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_093_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.9137761925991975,
+                    "FN": 577,
+                    "FP": 390,
+                    "IoU": 0.8412411755048432,
+                    "TN": 8382517,
+                    "TP": 5124,
+                    "n_pred": 5514,
+                    "n_ref": 5701
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_095_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_095_lesion_01_sample_0.nii.gz"
+        },
+        {
+            "metrics": {
+                "1": {
+                    "Dice": 0.0,
+                    "FN": 966,
+                    "FP": 1081,
+                    "IoU": 0.0,
+                    "TN": 8386561,
+                    "TP": 0,
+                    "n_pred": 1081,
+                    "n_ref": 966
+                }
+            },
+            "prediction_file": "/scratch-local/godilia.6138122/nnUNet_results/Dataset506*/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres/fold_all/validation/lung_096_lesion_01_sample_0.nii.gz",
+            "reference_file": "/scratch-local/godilia.6138122/nnUNet_preprocessed/Dataset506*/gt_segmentations/lung_096_lesion_01_sample_0.nii.gz"
+        }
+    ]
+}

@@ -52,7 +52,7 @@ class Uls23(SegmentationAlgorithm):
         )
         # Initialize the network architecture, loads the checkpoint
         self.predictor.initialize_from_trained_model_folder(
-            "/opt/algorithm/nnunet/nnUNet_results/Dataset901_Filtered_FSUP/nnUNetTrainer_ULS_500_QuarterLR__nnUNetPlansNoRs__3d_fullres_resenc",
+            "/opt/algorithm/nnunet/nnUNet_results/Dataset506/nnUNetTrainer_ULS_500_HalfLR__nnUNetPlans__3d_fullres",
             use_folds=("all"),
             checkpoint_name="checkpoint_best.pth",
         )
@@ -105,8 +105,9 @@ class Uls23(SegmentationAlgorithm):
         predictions = []
         for i, voi_spacing in enumerate(spacings):
             # Load the 3D array from the binary file
-            voi = torch.from_numpy(np.load(f"/tmp/voi_{i}.npy"))
-            voi = voi.to(dtype=torch.float32)
+            # voi = torch.from_numpy(np.load(f"/tmp/voi_{i}.npy"))
+            # voi = voi.to(dtype=torch.float32)
+            voi = np.load(f"/tmp/voi_{i}.npy")
 
             print(f'\nPredicting image of shape: {voi.shape}, spacing: {voi_spacing}')
             predictions.append(self.predictor.predict_single_npy_array(voi, {'spacing': voi_spacing}, None, None, False))
