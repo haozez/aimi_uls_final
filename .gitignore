@@ -1,6 +1,9 @@
 # Git files in sub-directories
 nnUNet/.git
 nnUNet/.gitignore
+nnUNet_raw
+nnUNet_preprocessed
+nnUNet_results
 
 # Annotations
 annotations/ULS23

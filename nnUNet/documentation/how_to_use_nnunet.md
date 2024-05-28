@@ -36,7 +36,7 @@ Where `DATASET_ID` is the dataset id (duh). We recommend `--verify_dataset_integ
 you run this command. This will check for some of the most common error sources!
 
 You can also process several datasets at once by giving `-d 1 2 3 [...]`. If you already know what U-Net configuration 
-you need you can also specify that with `-c 3d_fullres` (make sure to adapt -np in this case!). For more information 
+you need you can also specify that with `fullres-c 3d_` (make sure to adapt -np in this case!). For more information 
 about all the options available to you please run `nnUNetv2_plan_and_preprocess -h`.
 
 nnUNetv2_plan_and_preprocess will create a new subfolder in your nnUNet_preprocessed folder named after the dataset. 
