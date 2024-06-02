@@ -12,7 +12,7 @@ We followed the nnU-Net pipeline to train our models. For general information fo
 Folder structure:
 - `extensions/nnunetv2`: Our main contributions, including new loss functions with complementary experiment planners and network trainers.
 - `misc_scripts`: Miscellaneous scripts, including data preprocessing, data sampling, and job scripts.
-- `nnUNet`: The full nnUNet package with our modifications added; for replication purposes.
+- `nnUNet`: The full nnU-Net package with our modifications added; for replication purposes.
 - `sample_docker_container`: An example Docker container for inference. Should be modified to include the trained model weights.
 
 ### Our main contributions: experimentation with new loss functions
@@ -63,7 +63,7 @@ nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCCEAxisLoss -p nnUNetR
 
 We also implemented a loss function to increase the robustness of the model towards input perturbations. For this, we rotated the input images by 180 degrees, and trained the model to predict the same segmentation mask for both the original and rotated images. We combined the rotation robustness loss with the cross-entropy loss and Dice loss. The ratio between these losses is $4:4:2$ (CE : Dice : robust_loss).
 
-To train the nnUNet with rotation robustness loss for 500 epochs ($lr = 0.01$), use the following command:
+To train the nnU-Net with rotation robustness loss for 500 epochs ($lr = 0.01$), use the following command:
 ```
 nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_500_Robust -p nnUNetResEncUNetMPlans
 ```
@@ -93,11 +93,11 @@ We noticed that, for a few data samples, the image and label headers were mismat
 
 #### Adjust patch size for 3D models
 
-The nnUNet pipeline automatically adjusts the patch size during planning. However, our dataset has been preprocessed to make sure that one 3D patch contains the entire lesion. Automatically adjusting the patch size may result in a patch that does not contain the entire lesion. Therefore, we manually set the patch size to 256x256x128 (x, y, z) for 3D models. We achieved this by modifying the patch size in the plan file before re-running data preprocessing.
+The nnU-Net pipeline automatically adjusts the patch size during planning. However, our dataset has been preprocessed to make sure that one 3D patch contains the entire lesion. Automatically adjusting the patch size may result in a patch that does not contain the entire lesion. Therefore, we manually set the patch size to 256x256x128 (x, y, z) for 3D models. We achieved this by modifying the patch size in the plan file before re-running data preprocessing.
 
 #### Training scripts
 
-We used a job script to train the models on the Snellius cluster. The job script is available in the `misc_scripts` folder. In the script, we first check if nnUNet preprocessed the dataset, and if not, we preprocess the dataset first. Then we train the model using the nnUNet pipeline.
+We used a job script to train the models on the Snellius cluster. The job script is available in the `misc_scripts` folder. In the script, we first check if nnU-Net preprocessed the dataset, and if not, we preprocess the dataset first. Then we train the model using the nnU-Net pipeline.
 
 The job script is a template, and you need to modify the script to match your dataset and configuration. The job script is designed to run on the Snellius cluster, and you may need to modify the script to run on other clusters.
 
