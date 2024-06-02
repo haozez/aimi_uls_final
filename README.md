@@ -9,6 +9,11 @@ This repository contains the code for the AIMI Team 6 (Radboud University) in th
 
 We followed the nnUNet pipeline to train our models. For general information for preprocessing and training, please refer to the [nnUNet documentation](https://github.com/MIC-DKFZ/nnUNet?tab=readme-ov-file#how-to-get-started).
 
+Folder structure:
+- `extensions/nnunetv2`: Our main contributions, including new loss functions with complementary experiment planners and network trainers.
+- `misc_scripts`: Miscellaneous scripts, including data preprocessing, data sampling, and job scripts.
+- `nnUNet`: The full nnUNet package with our modifications added; for replication purposes.
+
 ### Our main contributions: experimental with new loss functions
 
 We experimented with multiple losses function to address the class imbalance issue and increase the robustness of the model towards input perturbations. Please notice that we used the latest ResNet version of nnUNet; is you do not intend to use the ResNet version, please remove `-p nnUNetResEncUNetMPlans` from the command line. Our changes can be found in the `extensions/nnunetv2` folder.
