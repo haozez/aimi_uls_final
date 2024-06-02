@@ -13,6 +13,7 @@ Folder structure:
 - `extensions/nnunetv2`: Our main contributions, including new loss functions with complementary experiment planners and network trainers.
 - `misc_scripts`: Miscellaneous scripts, including data preprocessing, data sampling, and job scripts.
 - `nnUNet`: The full nnUNet package with our modifications added; for replication purposes.
+- `sample_docker_container`: A sample Docker container for inference. Should be modified to include the trained model weights.
 
 ### Our main contributions: experimental with new loss functions
 
