@@ -20,7 +20,8 @@ Folder structure:
 We experimented with multiple losses function to address the class imbalance issue and increase the robustness of the model towards input perturbations. Please notice that we used the latest ResNet version of nnUNet; is you do not intend to use the ResNet version, please remove `-p nnUNetResEncUNetMPlans` from the command line. Our code implementations can be found in the `extensions/nnunetv2` folder.
 
 #### Focal loss and Top-k loss
-We used the Focal loss and Top-k loss to address the class imbalance issue. The Focal loss is a modification of the cross-entropy loss that down-weights the loss assigned to well-classified examples. The Top-k loss is another modification of the cross-entropy loss that only considers the k most probable classes. We set k to 10 in our experiments.
+We used the Focal loss and Top-k loss to address the class imbalance issue. The Focal loss is a modification of the cross-entropy loss that down-weights the loss assigned to well-classified examples. The Top-k loss is another modification of the cross-entropy loss, which only selects the top k% largest resulting
+error terms within each VOI to contribute to the final loss term. We set k to 10 in our experiments.
 
 To train the nnUNet with Focal loss for 500 epochs ($lr = 0.01$), use the following command:
 ```
