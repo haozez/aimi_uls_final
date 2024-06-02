@@ -59,7 +59,7 @@ We also implemented a loss function to increase the robustness of the model towa
 
 To train the nnUNet with rotation robustness loss for 500 epochs ($lr = 0.01$), use the following command:
 ```
-nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCCEAxisLoss -p nnUNetResEncUNetMPlans
+nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_500_Robust -p nnUNetResEncUNetMPlans
 ```
 
 ### Miscellaneous technical details
