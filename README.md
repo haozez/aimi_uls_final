@@ -1,70 +1,100 @@
-![ULS23_banner.png](assets%2FULS23_banner.png)
-### ULS23 Challenge Repository
-Repository for the [Universal Lesion Segmentation Challenge '23](https://uls23.grand-challenge.org/datasets/)
+### AIMI Team 6, ULS23 Challenge 
+Team members: O. Geertsema, D. Santos, V. Petre and H. Zhu
 
-### Labels
-The annotations folder contains the labels for the training data of the ULS23 Challenge.
+Supervisor: A. Hering
 
-To download the associated imaging data, visit: 
-- [Part 1](https://zenodo.org/records/10035161): Novel annotated data (ULS23_DeepLesion3D, ULS23_Radboudumc_Bone, ULS23_Radboudumc_Pancreas)
-- [Part 2](https://zenodo.org/records/10050960): Processed data (kits21, LIDC-IDRI, LiTS)
-- [Part 3](https://zenodo.org/records/10054306): Processed data (MDSC task 6/7/10, NIH-LN, CCC18)
-- [Part 4](https://zenodo.org/records/10054702): Processed data (DeepLesion)
-- [Part 5](https://zenodo.org/records/10055808): Processed data (DeepLesion)
-- [Part 6](https://zenodo.org/records/10056235): Processed data (DeepLesion)
+### Introduction
 
-_Note: when using MONAI to work with the data please ensure you are on version >= 1.2.0. 
-We have had reports of problems when loading the data using older versions._
+This repository contains the code for the AIMI Team 6 (Radboud University) in the ULS23 Challenge. The challenge is to segment lesions in medical images. More information about the challenge can be found on the [ULS23 Challenge website](https://uls23.grand-challenge.org/).
 
-#### Novel data annotation procedure:
+We followed the nnUNet pipeline to train our models. For general information for preprocessing and training, please refer to the [nnUNet documentation](https://github.com/MIC-DKFZ/nnUNet?tab=readme-ov-file#how-to-get-started).
 
-`ULS23_DeepLesion3D`: Using reader studies on GrandChallenge, trained (bio-)medical students used the measurement information of the lesions in DeepLesion for 3D segmentation in the axial plane. 
-Each lesion was segmented in triplicate and the majority mask was used as the final label. 
-Lesions were selected using hard-negative mining with a standard 3D nnUnet trained on the fully annotated publicly available data.
-We compared the axial diameters extracted from the prediction of this model to the reference measurements provided by DeepLesion and included the lesions with the worst performance.
-We selected lesions to be included such that they were representative of the entire thorax-abdomen area.
-This meant 200 abdominal lesions, 100 bone lesions, 50 kidney lesions, 50 liver lesions, 100 lung lesions, 100 mediastinal lesions and 150 assorted lesions.
+### Our main contributions: experimental with new loss functions
 
-`ULS23_Radboudumc_Bone` & `ULS23_Radboudumc_Pancreas`: VOI's in these datasets are from studies conducted at the Radboudumc hospital in Nijmegen, The Netherlands. 
-Lesions were selected based on the radiological reports mentioning bone or pancreas disease. 
-An experienced radiologist identified and then segmented the lesions in 3D. ULS23_Radboudumc_Bone contains both sclerotic & lytic bone lesions.
+We experimented with multiple losses function to address the class imbalance issue and increase the robustness of the model towards input perturbations. Please notice that we used the latest ResNet version of nnUNet; is you do not intedn to use the ResNet version, please remove `-p nnUNetResEncUNetMPlans` from the command line.
 
-If you notice any problems with an images or mask, please launch an issue on the repo and we will try to correct it.
+#### Focal loss and Top-k loss
+We used the Focal loss and Top-k loss to address the class imbalance issue. The Focal loss is a modification of the cross-entropy loss that down-weights the loss assigned to well-classified examples. The Top-k loss is another modification of the cross-entropy loss that only considers the k most probable classes. We set k to 10 in our experiments.
 
-### Baseline Model
-The `baseline_model` folder contains the minor code adaptations to the [nnUnetv2](https://github.com/MIC-DKFZ/nnUNet/tree/master) framework that are necessary to run the baseline model for the challenge.
-Simply copy over the files in the nnunetv2 subfolder into your local nnunetv2 installation location.
-To prevent resampling we have created a dummy resampling function 'no_resampling_data_or_seg_to_shape', which can be called in the plans files.
-We also provide additional trainer classes to be able to train for more epochs and with a smaller starting learning rate. 
-We used these when fine-tuning our baseline model pre-trained on the weakly annotated data.
+To train the nnUNet with Focal loss for 500 epochs ($lr = 0.01$), use the following command:
+```
+nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCFocalLoss -p nnUNetResEncUNetMPlans
+```
+in which `DATASET` is the dataset ID or name, `CONFIG` is the configuration (`2d` or `3d_fullres`) and `FOLD` is the fold number for training (or `all` if not using cross-validation).
 
-Model weights and the algorithm container of the best performing baseline model for the weakly-annotated data are [stored on Zenodo](https://zenodo.org/doi/10.5281/zenodo.10665106). It can also be [used directly](https://grand-challenge.org/algorithms/universal-lesion-segmentation-uls23-baseline/) on novel data from GrandChallenge.
+To train the nnUNet with Top-k loss for 500 epochs ($lr = 0.01$), use the following command:
+```
+nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCTopKLoss -p nnUNetResEncUNetMPlans
+```
 
-We also include the data split used for testing on the combined, fully-annotated training datasets and the plans files.
+#### Long- and short-axis matching loss
+The ULS task is not trivial, and we sub-selected part of the data to train the mode due to time constrain (data sampling strategy will be described later); we hypothesized that the model could benefit from a loss function that captures global information about lesions. Therefore, we implemented a loss function considering whether the long- and short-axis of the lesions match between prediction and target. The pseudo-code of the loss function is as follows:
+```
+Def get_axis(3d_binary_image):
+    For each slice along the z-axis do:
+	    If no positive label in the slice:
+            Return long_axis = 0, short_axis = 0
+        Else:
+            Find the largest connected component in the slice
+            Fit an ellipse to that largest connected component
+            Return the long_axis and short_axis of that ellipse
 
-The `GC_algorithm` folder will contain the code for transforming the nnUnetv2 baseline into a GrandChallenge compatible algorithm.
+Def long_short_axis_loss(nn.Module):
+    Pred_labels = binarize the network output
+    Pred_long_axis, pred_short_axis = get_axis(pred_labels)
+    Target_long_axis, target_short_axis = get_axis(target)
+    Return SMAPE(pred_long_axis, target_long_axis) + SMAPE(pred_short_axis, target_short_axis)
+```
 
-### Data Processing Code
+We combined the long- and short-axis matching loss with the cross-entropy loss and Dice loss. The ratio between these losses are $4:4:2$ (CE : Dice : axis_loss).
 
-The `data_processing` folder contains the code used to prepare the source datasets into the ULS23 format: cropping VOI's around lesions and preparing the sem-supervised data using GrabCut.
+To train the nnUNet with long- and short-axis matching loss for 500 epochs ($lr = 0.01$), use the following command:
+```
+nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCCEAxisLoss -p nnUNetResEncUNetMPlans
+```
 
-### Contact Information
-[max.degrauw@radboudumc.nl](mailto:max.degrauw@radboudumc.nl), [alessa.hering@radboudumc.nl](mailto:alessa.hering@radboudumc.nl) 
+#### (Rotation) robustness loss
 
-[Diagnostic Image Analysis Group,
-Radboud University Medical Center,
-Nijmegen, The Netherlands](https://www.diagnijmegen.nl/)
+We also implemented a loss function to increase the robustness of the model towards input perturbations. For this, we rotated the input images by 180 trained the model to predict the same segmentation mask for both the original and rotated images. We combined the rotation robustness loss with the cross-entropy loss and Dice loss. The ratio between these losses are $4:4:2$ (CE : Dice : robust_loss).
 
-### References:
-- Heller, N., Isensee, F., Trofimova, D., Tejpaul, R., Zhao, Z., Chen, H., ... & Weight, C. (2023). The KiTS21 Challenge: Automatic segmentation of kidneys, renal tumors, and renal cysts in corticomedullary-phase CT. arXiv preprint arXiv:2307.01984.
-- Heller, N., Isensee, F., Maier-Hein, K. H., Hou, X., Xie, C., Li, F., ... & Weight, C. (2021). The state of the art in kidney and kidney tumor segmentation in contrast-enhanced CT imaging: Results of the KiTS19 challenge. Medical image analysis, 67, 101821. 
-- Bilic, P., Christ, P., Li, H. B., Vorontsov, E., Ben-Cohen, A., Kaissis, G., ... & Menze, B. (2023). The liver tumor segmentation benchmark (lits). Medical Image Analysis, 84, 102680. 
-- Roth, H., Lu, L., Seff, A., Cherry, K. M., Hoffman, J., Wang, S., Liu, J., Turkbey, E., & Summers, R. M. (2015). A new 2.5 D representation for lymph node detection in CT [Data set]. The Cancer Imaging Archive. https://doi.org/10.7937/K9/TCIA.2015.AQIIDCNM
-- Pedrosa, J., Aresta, G., Ferreira, C., Atwal, G., Phoulady, H. A., Chen, X., ... & Campilho, A. (2021). LNDb challenge on automatic lung cancer patient management. Medical image analysis, 70, 102027. 
-- Jacobs, C., van Rikxoort, E. M., Murphy, K., Prokop, M., Schaefer-Prokop, C. M., & van Ginneken, B. (2016). Computer-aided detection of pulmonary nodules: a comparative study using the public LIDC/IDRI database. European radiology, 26, 2139-2147. 
-- Antonelli, M., Reinke, A., Bakas, S., Farahani, K., Kopp-Schneider, A., Landman, B. A., ... & Cardoso, M. J. (2022). The medical segmentation decathlon. Nature communications, 13(1), 4128. 
-- Rother, C., Kolmogorov, V., & Blake, A. (2004). " GrabCut" interactive foreground extraction using iterated graph cuts. ACM transactions on graphics (TOG), 23(3), 309-314. 
-- Yan, K., Wang, X., Lu, L., & Summers, R. M. (2018). DeepLesion: automated mining of large-scale lesion annotations and universal lesion detection with deep learning. Journal of medical imaging, 5(3), 036501-036501. 
-- Urban, T., Ziegler, E., Pieper, S., Kirby, J., Rukas, D., Beardmore, B., Somarouthu, B., Ozkan, E., Lelis, G., Fevrier-Sullivan, B., Nandekar, S., Beers, A., Jaffe, C., Freymann, J., Clunie, D., Harris, G. J., & Kalpathy-Cramer, J. (2019). Crowds Cure Cancer: Crowdsourced data collected at the RSNA 2018 annual meeting [Data set]. The Cancer Imaging Archive. https://doi.org/10.7937/TCIA.2019.yk0gm1eb
-- Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring 
-method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
+To train the nnUNet with rotation robustness loss for 500 epochs ($lr = 0.01$), use the following command:
+```
+nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCCEAxisLoss -p nnUNetResEncUNetMPlans
+```
+
+### Miscellaneous technical details
+
+Beyond the loss functions, we also implemented a few other functionality to improve the model performance. We used the following data augmentation techniques: random rotation, random scaling, random elastic deformation, random flipping, and random intensity shift. We also used the following post-processing techniques: thresholding, connected component analysis, and morphological operations.
+
+#### Data preprocessing
+
+Although the published dataset has been preprocessed by the organizers in terms of patchification and normalization, we further preprocessed the dataset to match the nnUNet format. We did the following preprocessing steps:
+- The dataset were published as split zip archives (i.e., *.zip, *.z01, *.z02, etc.). We merged the split archives and unzipped the dataset files.
+- Some of the images do not come with a label file. We detected and removed these images from the dataset.
+- We added a 4-digit dummy channel identifier to the enf of the image and file names, per the requirement of nnUNet pipeline.
+- We create a `dataset.json` file that contains the dataset information, such as the channel names, the label names, and the number of training samples. The `dataset.json` file template is available in the `misc_scripts` folder; please modify the template to match the dataset (number of samples).
+- We made the preprocessed dataset available in the project space on Snellius, and we are aware that other teams have taken advantage of this preprocessed dataset.
+
+#### Data sampling strategy
+
+We used a data sampling strategy to train the model. We randomly selected 10% of the data from each dataset for training, and 2.5% for validation. We used the same data sampling strategy for all experiments. For two datasets (`DSC_Task06_Lung`, `MDSC_Task10_Colon`) which less than 100 samples, we 80% of the data for training and 20% for validation, which ensures that these lesions are well represented in the training and validation sets.
+
+The data sampling script is available in the `misc_scripts` folder.
+
+#### Fix image head mismatching between image and label
+
+We noticed that, for a few data samples, the image and label headers were mismatched in terms of significant digits. We detected this issue by comparing the image and label headers and fixed it by using the image header to replace the label header. We have carefully checked that the mismatching issue only comes from the differences of significant digits, and the image and label headers are actually consistent.
+
+#### Adjust patch size for 3D models
+
+The nnUNet pipeline automatically adjusts the patch size during planning. However, our dataset has been preprocessed to make sure that one 3D patch contains the entire lesion. Automatically adjusting the patch size may result in a patch that does not contain the entire lesion. Therefore, we manually set the patch size to 256x256x128 (x, y, z) for 3D models. We achieved this by modifying the patch size in the plan file before running preprocessing.
+
+#### Training scripts
+
+We used a job script to train the models on the Snellius cluster. The job script is available in the `misc_scripts` folder. In the script, we first check if nnUNet preprocessed the dataset, and if not, we preprocess the dataset first. Then we train the model using the nnUNet pipeline.
+
+The job script is a template, and you need to modify the script to match your dataset and configuration. Meanwhile, the job script is designed to run on the Snellius cluster, and you may need to modify the script to run on other clusters.
+
+#### Trained model weights
+
+You can find the trained model by first unzipping the `containers.zip`, and then go to the `containers/MODEL_NAME/architecture/nnUNet_results` folder. Note that you can also use files in `containers.zip` to construct Docker containers for our model.
