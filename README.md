@@ -11,7 +11,7 @@ We followed the nnUNet pipeline to train our models. For general information for
 
 ### Our main contributions: experimental with new loss functions
 
-We experimented with multiple losses function to address the class imbalance issue and increase the robustness of the model towards input perturbations. Please notice that we used the latest ResNet version of nnUNet; is you do not intend to use the ResNet version, please remove `-p nnUNetResEncUNetMPlans` from the command line. Our changes can be found in the `extensions/nnunetv2` folder.
+We experimented with multiple losses function to address the class imbalance issue and increase the robustness of the model towards input perturbations. Please notice that we used the latest ResNet version of nnUNet; is you do not intend to use the ResNet version, please remove `-p nnUNetResEncUNetMPlans` from the command line. Our code implementations can be found in the `extensions/nnunetv2` folder.
 
 #### Focal loss and Top-k loss
 We used the Focal loss and Top-k loss to address the class imbalance issue. The Focal loss is a modification of the cross-entropy loss that down-weights the loss assigned to well-classified examples. The Top-k loss is another modification of the cross-entropy loss that only considers the k most probable classes. We set k to 10 in our experiments.
@@ -77,7 +77,7 @@ Although the published dataset has been preprocessed by the organizers in terms 
 
 #### Data sampling strategy
 
-We used a data sampling strategy to train the model. We randomly selected 10% of the data from each dataset for training, and 2.5% for validation. We used the same data sampling strategy for all experiments. For two datasets (`DSC_Task06_Lung`, `MDSC_Task10_Colon`) which less than 100 samples, we 80% of the data for training and 20% for validation, which ensures that these lesions are well represented in the training and validation sets.
+We used a data sampling strategy to train the model. We randomly selected 10% of the data from each dataset for training, and 2.5% for validation. We used the same data sampling strategy for all experiments. For two datasets (`DSC_Task06_Lung`, `MDSC_Task10_Colon`) which less than 100 samples, we took 80% of the data for training and 20% for validation, which ensures that these lesions are well represented in the training and validation sets.
 
 The data sampling script is available in the `misc_scripts` folder.
 
