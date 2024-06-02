@@ -17,11 +17,10 @@ Folder structure:
 
 ### Our main contributions: experimental with new loss functions
 
-We experimented with multiple losses function to address the class imbalance issue and increase the robustness of the model towards input perturbations. Please notice that we used the latest ResNet version of nnUNet; is you do not intend to use the ResNet version, please remove `-p nnUNetResEncUNetMPlans` from the command line. Our code implementations can be found in the `extensions/nnunetv2` folder.
+We experimented with multiple losses function to address the class imbalance issue and increase the robustness of the model towards input perturbations. Please notice that we used the latest ResNet version of nnUNet; if you do not intend to use the ResNet version, please remove `-p nnUNetResEncUNetMPlans` from the command line. Our code implementations can be found in the `extensions/nnunetv2` folder.
 
 #### Focal loss and Top-k loss
-We used the Focal loss and Top-k loss to address the class imbalance issue. The Focal loss is a modification of the cross-entropy loss that down-weights the loss assigned to well-classified examples. The Top-k loss is another modification of the cross-entropy loss, which only selects the top k% largest resulting
-error terms within each VOI to contribute to the final loss term. We set k to 10 in our experiments.
+We used the Focal loss and Top-k loss to address the class imbalance issue. The Focal loss is a modification of the cross-entropy loss that down-weights the loss assigned to well-classified examples. The Top-k loss is another modification of the cross-entropy loss, which only selects the top k% largest resulting error terms within each VOI to contribute to the final loss term. We set k to 10 in our experiments and for the focal loss kept its default values.
 
 To train the nnUNet with Focal loss for 500 epochs ($lr = 0.01$), use the following command:
 ```
@@ -35,7 +34,7 @@ nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCTopKLoss -p nnUNetRes
 ```
 
 #### Long- and short-axis matching loss
-The ULS task is not trivial, and we sub-selected part of the data to train the mode due to time constrain (data sampling strategy will be described later); we hypothesized that the model could benefit from a loss function that captures global information about lesions. Therefore, we implemented a loss function considering whether the long- and short-axis of the lesions match between prediction and target. The pseudo-code of the loss function is as follows:
+The ULS task is not trivial, and we sub-selected part of the data to train the model due to time constrain (data sampling strategy will be described later); we hypothesized that the model could benefit from a loss function that captures global information about lesions. Therefore, we implemented a loss function considering whether the long- and short-axis of the lesions match between prediction and target. The pseudo-code of the loss function is as follows:
 ```
 Def get_axis(3d_binary_image):
     For each slice along the z-axis do:
@@ -62,7 +61,7 @@ nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_DCCEAxisLoss -p nnUNetR
 
 #### (Rotation) robustness loss
 
-We also implemented a loss function to increase the robustness of the model towards input perturbations. For this, we rotated the input images by 180 trained the model to predict the same segmentation mask for both the original and rotated images. We combined the rotation robustness loss with the cross-entropy loss and Dice loss. The ratio between these losses are $4:4:2$ (CE : Dice : robust_loss).
+We also implemented a loss function to increase the robustness of the model towards input perturbations. For this, we rotated the input images by 180 trained the model to predict the same segmentation mask for both the original and rotated images. We combined the rotation robustness loss with the cross-entropy loss and Dice loss. The ratio between these losses is $4:4:2$ (CE : Dice : robust_loss).
 
 To train the nnUNet with rotation robustness loss for 500 epochs ($lr = 0.01$), use the following command:
 ```
@@ -71,20 +70,20 @@ nnUNetv2_train DATASET CONFIG FOLD -tr nnUNetTrainer_ULS_500_Robust -p nnUNetRes
 
 ### Miscellaneous technical details
 
-Beyond the loss functions, we also implemented a few other functionality to improve the model performance. We used the following data augmentation techniques: random rotation, random scaling, random elastic deformation, random flipping, and random intensity shift. We also used the following post-processing techniques: thresholding, connected component analysis, and morphological operations.
+Beyond the loss functions, we also implemented a few other functionalities to improve the model performance. We used the following data augmentation techniques: random rotation, random scaling, random elastic deformation, random flipping, and random intensity shift. We also used the following post-processing techniques: thresholding, connected component analysis, and morphological operations.
 
 #### Data preprocessing
 
 Although the published dataset has been preprocessed by the organizers in terms of patchification and normalization, we further preprocessed the dataset to match the nnUNet format. We did the following preprocessing steps:
 - The dataset were published as split zip archives (i.e., *.zip, *.z01, *.z02, etc.). We merged the split archives and unzipped the dataset files.
 - Some of the images do not come with a label file. We detected and removed these images from the dataset.
-- We added a 4-digit dummy channel identifier to the enf of the image and file names, per the requirement of nnUNet pipeline.
+- We added a 4-digit dummy channel identifier to the end of the image and file names, per the requirement of nnUNet pipeline.
 - We create a `dataset.json` file that contains the dataset information, such as the channel names, the label names, and the number of training samples. The `dataset.json` file template is available in the `misc_scripts` folder; please modify the template to match the dataset (number of samples).
 - We made the preprocessed dataset available in the project space on Snellius, and we are aware that other teams have taken advantage of this preprocessed dataset.
 
 #### Data sampling strategy
 
-We used a data sampling strategy to train the model. We randomly selected 10% of the data from each dataset for training, and 2.5% for validation. We used the same data sampling strategy for all experiments. For two datasets (`DSC_Task06_Lung`, `MDSC_Task10_Colon`) which less than 100 samples, we took 80% of the data for training and 20% for validation, which ensures that these lesions are well represented in the training and validation sets.
+We used a data sampling strategy to train the model. We randomly selected 10% of the data from each dataset for training, and 2.5% for validation. We used the same data sampling strategy for all experiments. For two datasets (`DSC_Task06_Lung`, `MDSC_Task10_Colon`) which consisted of less than 100 samples, we took 80% of the data for training and 20% for validation, which ensures that these lesions are well represented in the training and validation sets.
 
 The data sampling script is available in the `misc_scripts` folder.
 
