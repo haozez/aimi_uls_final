@@ -1,13 +1,5 @@
 nnUNet/.git
 nnUNet/.gitignore
-nnUNet_raw
-nnUNet_preprocessed
-nnUNet_results
-test_log
-val_logs
-log_files
-containers
-grading_form_AIMI2024_v20240516.xlsx
 
 # Annotations
 annotations/ULS23

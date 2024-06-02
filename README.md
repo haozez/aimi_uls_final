@@ -100,6 +100,8 @@ We used a job script to train the models on the Snellius cluster. The job script
 
 The job script is a template, and you need to modify the script to match your dataset and configuration. Meanwhile, the job script is designed to run on the Snellius cluster, and you may need to modify the script to run on other clusters.
 
-#### Trained model weights
+#### Trained model weights and constructing Docker container
 
 The trained model weights are available per request. We unfortunately cannot provide the weights directly in the repository due to the size limitation of the repository.
+
+To construct the Docker container, we used the `Dockerfile` provided in the `sample_docker_container` folder. We modified the `Dockerfile` to include the necessary scripts and install required packages to run the inference. Before building the Docker container, please make sure that the trained model weights are available in the `architecture/nnUNet_results` directory.

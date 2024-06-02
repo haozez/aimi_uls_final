@@ -1,0 +1,1 @@
+Place the input file here for inference. The input file used by ULS23 Challenge can be downloaded from the [ULS23 Challenge website](https://uls23.grand-challenge.org/Download/). Registration is required to download the data.
