@@ -97,4 +97,4 @@ The job script is a template, and you need to modify the script to match your da
 
 #### Trained model weights
 
-You can find the trained model by first unzipping the `containers.zip`, and then go to the `containers/MODEL_NAME/architecture/nnUNet_results` folder. Note that you can also use files in `containers.zip` to construct Docker containers for our model.
+The trained model weights are available per request. We unfortunately cannot provide the weights directly in the repository due to the size limitation of the repository.
